@@ -4,10 +4,10 @@ const Spawn = require('child_process').spawn;
 const run = (cmd, args, cb) => {
     const proc = Spawn(cmd, args);
     console.error('>>' + cmd + ' ' + args.join(' '));
-    let res = ''
-    proc.stdout.on('data', (data) => { res += data });
+    let res = '';
+    proc.stdout.on('data', (data) => { res += data; });
     proc.stderr.on('data', (data) => { process.stderr.write(data); });
-    proc.on('close', (code) => { cb(res); });
+    proc.on('close', () => { cb(res); });
 };
 
 const parseArg = (a) => {
@@ -67,17 +67,17 @@ const mkTranslationTable = (linuxPath, cb) => {
                 out = '';
             }
         });
-        cb(outObj)
+        cb(outObj);
     });
 };
 
-const getSyscallGuesses = module.exports.getSyscallGuesses = (linuxPath, cb) => {
+module.exports.getSyscallGuesses = (linuxPath, cb) => {
     mkTranslationTable(linuxPath, (tbl) => {
         mkWhitelist((wl) => {
             Object.keys(tbl).forEach((x) => {
                 if (wl.indexOf(x) === -1) { delete tbl[x]; }
             });
             cb(tbl);
-        })
+        });
     });
 };

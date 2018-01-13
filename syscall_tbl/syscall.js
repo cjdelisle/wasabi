@@ -12,7 +12,6 @@ const SYSCALL_ARGS = {
     SYS_lstat:          [0, 1, 1],
     SYS_poll:           [0, 1, 0, 0],
     SYS_lseek:          [0, 0, 0, 0],
-    SYS_lseek:          [0, 0, 0, 0],
     SYS_mmap:           [1, 1, 0, 0, 0, 0, 0], //XXX
     SYS_mprotect:       [0, 1, 0, 0],
     SYS_munmap:         [0, 1, 0],
