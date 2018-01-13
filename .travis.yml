@@ -4,9 +4,10 @@ branches:
     - master
 node_js:
   - "9.3.0"
-apt:
-  packages:
-    - linux-headers-generic
+addons:
+  apt:
+    packages:
+      - linux-headers-generic
 install:
   - echo "Don't do npm-install until after generating the syscalls"
 script:
