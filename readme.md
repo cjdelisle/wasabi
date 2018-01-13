@@ -1,7 +1,27 @@
 # WasmABI
 
-Run C code, compiled to WebAssembly, as if it were native code.
-This is really experimental but is able to make a hello world run on amd64/linux.
+This is the plan: https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript
+
+The idea is to get [WebAssembly](http://webassembly.org/) code to run in Linux as if it were
+native code, with full system call support. Then once it is functioning
+
+## Todo list
+* [x] [Toolchain for building C/C++ to wasm](https://github.com/WebGHC/wasm-cross)
+* [x] [libc port to wasm](https://github.com/WebGHC/musl)
+* [x] [Syscall handler w/ pointer translation](https://github.com/cjdelisle/wasmabi/blob/master/SyscallHandler.c)
+* [x] Hello_world.wasm running in nodejs with syscall handler
+* [] Syscall FFI (rewrite pointers in structures, convert from 32 bit to 64 bit)
+* [] Demonstrate a busybox shell with standard unix tools compiled to WASM
+* [] Migrate from nodejs to [WAVM](https://github.com/AndrewScheidecker/WAVM/)
+* [] Debugging support
+* [] Run multiple processes in the same OS process
+  * [] implement `fork()`
+* [] Kernelspace demo
+
+## See it in action
+
+The objective is to be cross-platform but this probably won't work on anything other than amd64 for now.
+Getting this to run on systems other than linux is out of scope.
 
 To reproduce:
 
