@@ -3,7 +3,9 @@
 This is the plan: https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript
 
 The idea is to get [WebAssembly](http://webassembly.org/) code to run in Linux as if it were
-native code, with full system call support. Then once it is functioning
+native code, with full system call support. Then since it is already software bounds-checked,
+migrate it into kernelspace because it cannot trash kernel memory. The idea being to put an
+end to context switches.
 
 ## Todo list
 * [x] [Toolchain for building C/C++ to wasm](https://github.com/WebGHC/wasm-cross)
