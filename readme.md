@@ -10,13 +10,13 @@ native code, with full system call support. Then once it is functioning
 * [x] [libc port to wasm](https://github.com/WebGHC/musl)
 * [x] [Syscall handler w/ pointer translation](https://github.com/cjdelisle/wasmabi/blob/master/SyscallHandler.c)
 * [x] Hello_world.wasm running in nodejs with syscall handler
-* [] Syscall FFI (rewrite pointers in structures, convert from 32 bit to 64 bit)
-* [] Demonstrate a busybox shell with standard unix tools compiled to WASM
-* [] Migrate from nodejs to [WAVM](https://github.com/AndrewScheidecker/WAVM/)
-* [] Debugging support
-* [] Run multiple processes in the same OS process
-  * [] implement `fork()`
-* [] Kernelspace demo
+* [ ] Syscall FFI (rewrite pointers in structures, convert from 32 bit to 64 bit)
+* [ ] Demonstrate a busybox shell with standard unix tools compiled to WASM
+* [ ] Migrate from nodejs to [WAVM](https://github.com/AndrewScheidecker/WAVM/)
+* [ ] Debugging support
+* [ ] Run multiple processes in the same OS process
+  * [ ] implement `fork()`
+* [ ] Kernelspace demo
 
 ## See it in action
 
