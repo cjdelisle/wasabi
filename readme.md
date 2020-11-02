@@ -1,5 +1,7 @@
 # Wasabi - WebAssembly ABI
 
+Status: unmaintained, core concepts are implemented in [wasi](https://wasi.dev/)
+
 This is the plan: https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript
 
 [![Build Status](https://travis-ci.org/cjdelisle/wasmabi.svg?branch=master)](https://travis-ci.org/cjdelisle/wasabi)
